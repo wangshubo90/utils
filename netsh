@@ -1,0 +1,11 @@
+# FORWARD PORTS INTO WSL2
+netsh interface portproxy add v4tov4 listenaddress=0.0.0.0 listenport=2222 connectaddress=172.23.129.80 connectport=2222
+
+# OPEN THE FIREWALL
+netsh advfirewall firewall add rule name="Open Port 2222 for WSL2" dir=in action=allow protocol=TCP localport=2222
+
+# list all rules
+netsh interface portproxy show v4tov4
+
+# remove all rules
+netsh int portproxy reset all
