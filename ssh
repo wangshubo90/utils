@@ -1,0 +1,11 @@
+# copy file
+scp
+
+# remote
+ssh user@host.ip.address
+
+# generate new pub key
+ssh-keygen
+
+# copy ssh pub key to remote linux device
+type $env:USERPROFILE\.ssh\id_rsa.pub | ssh shubow@172.24.242.48 "cat >> .ssh/authorized_keys"
